@@ -1,0 +1,225 @@
+@font-face {
+    font-family: 'Fixel Regular';
+    src: local('Fixel Display Regular'), local('Fixel-Display-Regular'),
+    url('assets/fonts/FixelDisplay-Regular.woff2') format('woff2'),
+    url('assets/fonts/FixelDisplay-Regular.woff') format('woff'),
+    url('assets/fonts/FixelDisplay-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Fixel Bold';
+    src: local('Fixel Display Bold'), local('Fixel-Display-Bold'),
+    url('assets/fonts/FixelDisplay-Bold.woff2') format('woff2'),
+    url('assets/fonts/FixelDisplay-Bold.woff') format('woff'),
+    url('assets/fonts/FixelDisplay-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Fixel Semibold';
+    src: local('Fixel Display SemiBold'), local('Fixel-Display-SemiBold'),
+    url('assets/fonts/FixelDisplay-SemiBold.woff2') format('woff2'),
+    url('assets/fonts/FixelDisplay-SemiBold.woff') format('woff'),
+    url('assets/fonts/FixelDisplay-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Basenji ExtraLight';
+    src: url('assets/fonts/basenji-extralight.otf') format('opentype');
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Basenji Light';
+    src: url('assets/fonts/basenji-light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+.basenji-extralight {
+    font-family: 'Basenji ExtraLight', sans-serif;
+}
+.basenji-light {
+    font-family: 'Basenji Light', sans-serif;
+}
+.fixel-regular {
+    font-family: 'Fixel Regular', sans-serif;
+}
+.fixel-bold {
+    font-family: 'Fixel Bold', sans-serif;
+}
+.fixel-semibold {
+    font-family: 'Fixel Semibold', sans-serif;
+}
+.color-white {
+    color: #FFFFFF;
+}
+html {
+    font-size: 20px;
+    min-height: 100vh;
+    background: #FFFFFF;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #1D1D1D;
+    letter-spacing: 0;
+    line-height: 104%;
+    text-decoration: none;
+    border: none;
+}
+section.hero {
+    overflow: hidden;
+    padding: 0 3rem 3rem 3rem;
+    min-height: 90vh;
+    background-image: url('assets/images/bg-star-1.svg'), url('assets/images/bg-star-2.svg');
+    background-repeat: no-repeat;
+    background-size: 17.5rem 17.5rem, 15rem, 15rem;
+    background-position: 0 -3.5rem, 100% 100%;
+}
+section.hero .top {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+section.hero .top > div {
+    font-size: 1.3rem;
+}
+section.hero .top .img {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    border: 3px solid #F25B92;
+    background-image: url("assets/images/expert-icon.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+section.hero .title {
+    font-size: calc(100vw / 8);
+    text-align: center;
+    position: relative;
+    margin-bottom: calc(60vw / 4.4);
+}
+section.hero .title .abs {
+    width: 45vw;
+    height: auto;
+    position: absolute;
+    top: 45%;
+    left: 46%;
+    transform: translateX(-50%);
+}
+section.hero .bottom .button {
+    width: fit-content;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-direction: row;
+    flex: 2;
+    background-image: url("assets/images/button-bg.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding: .75rem 3rem .75rem 3rem;
+    border: 10px solid #f8acc7;
+    border-radius: 100px;
+    height: fit-content;
+    margin: auto;
+    z-index: 10000;
+    position: relative;
+}
+section.hero .bottom .button > span {
+    color: #FFFFFF;
+}
+section.hero .bottom .button > img {
+    width: 2rem;
+    height: 2rem;
+}
+section.hero .bottom * {
+    font-size: 1.25rem;
+}
+section.hero .bottom {
+    display: flex;
+    gap: 2rem;
+    margin-top: -4rem;
+    align-items: flex-end;
+}
+section.hero .bottom > div {
+    flex: 1;
+}
+section.hero .bottom  .left {
+    display: flex;
+    flex-direction: column;
+}
+section.hero .bottom .left .dot {
+    width: .4rem;
+    height: .4rem;
+    border-radius: 50%;
+    background: #F25B92;
+}
+section.hero .bottom  .left > div {
+    border: 2px solid #F4F3F4;
+    padding: .75rem 2.2rem .75rem 1rem;
+    width: fit-content;
+    background: #FFF;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+section.hero .bottom  .left > div:not(:first-child) {
+    margin-top: -.1rem;
+}
+section.hero .bottom  .left > div:nth-child(2) {
+    align-self: center;
+}
+section.hero .bottom  .left .text {
+    font-size: .9rem;
+    font-family: 'Fixel Regular', sans-serif;
+}
+section.hero .bottom > .center {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    flex: 2;
+}
+section.hero .bottom > .center .text {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+section.hero .bottom > .right {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-self: center;
+}
+section.hero .bottom > .right .text {
+    font-size: 1.5rem;
+    line-height: 104%;
+    letter-spacing: 2px;
+}
+section.hero .bottom > .right > .bonus {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+section.hero .right > .bonus img {
+    width: 3rem;
+    height: 3rem;
+}
+section.hero .right > .bonus > div {
+    padding: .25rem 1rem;
+    height: fit-content;
+    background: #F25B92;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 80px;
+    font-size: 1.2rem;
+    line-height: 104%;
+}
