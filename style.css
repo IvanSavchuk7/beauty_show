@@ -117,7 +117,7 @@ section.hero .bottom  .left > div:nth-child(3) {
     align-self: center;
 }
 section.hero .bottom  .left .text {
-    font-size: .9rem;
+    font-size: .8rem;
     font-family: 'Fixel Regular', sans-serif;
 }
 section.hero .bottom > .center {
@@ -717,7 +717,8 @@ section.offer .form > .content .action .abs-mobile {
         gap: 0;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: max-content 1fr;
+        grid-template-rows: auto auto;
+        align-items: stretch;
         grid-template-areas:
     "a b"
     "c c";
@@ -726,9 +727,13 @@ section.offer .form > .content .action .abs-mobile {
         width: 100%;
         gap: 1.5rem;
         padding: 1rem 1rem 1rem 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
     }
     section.hero .bottom > .left > div .text {
-        font-size: 1.35rem !important;
+        font-size: 1.25rem !important;
     }
     .a { grid-area: a; }
     .b { grid-area: b; }
