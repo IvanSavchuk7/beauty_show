@@ -14,9 +14,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const utmSource = urlParams.get("utm_source");
 
     if (utmSource && /facebook|fb/i.test(utmSource)) {
-        sheetNameInput.value = "Таргет";
+        sheetNameInput.value = "Beauty Show";
     } else {
-        sheetNameInput.value = "Beauty Icon"; // за замовчуванням
+        sheetNameInput.value = "Beauty Show"; // за замовчуванням
     }
 
     form.addEventListener("submit", function (e) {
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const formData = new FormData(form);
 
-        fetch("", {
+        fetch("https://script.google.com/macros/s/AKfycbzogLbouUG0_SAFx7WLzi0ulY4B68W-Pvs8Q41eZJ-JYowyzcqUvdXm2ek7pEUmtd4-/exec", {
             method: "POST",
             body: formData
         })
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     arrowOuter.src = "../assets/images/checkmark.svg"; // ✅ Your checkmark icon
                     arrowOuter.style.background = "none";
                     setTimeout(() => {
-                        window.location.href = "https://beauty-icon.egormuaschool.com.ua/finish/";
+                        window.location.href = "https://ivansavchuk7.github.io/beauty_show/finish";
                     }, 1000);
                     submitBtn.classList.add("submitted");
                 }
