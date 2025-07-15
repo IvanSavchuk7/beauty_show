@@ -849,7 +849,7 @@ section.offer .form > .content .action .abs-mobile {
     section.about .offer {
         flex-direction: column;
         width: fit-content;
-        margin: 2rem auto 0 auto;
+        margin: 0 auto 0 auto;
         padding: 11rem 2rem 1rem 2rem;
     }
     section.about .offer > .text {
@@ -996,6 +996,7 @@ section.offer .form > .content .action .abs-mobile {
     }
     section.hero .bottom {
         gap: 1.5rem;
+        padding-bottom: 2rem;
     }
     section.hero .top > div {
         font-size: 1.2rem;
@@ -1028,7 +1029,7 @@ section.offer .form > .content .action .abs-mobile {
         font-size: 2.25rem;
     }
     section.offer .form > .content .action {
-        padding: 1.25rem;
+        padding: 2rem 1.25rem;
     }
     section.about .grid > div > .img {
         height: 20rem;
