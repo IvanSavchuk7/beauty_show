@@ -77,9 +77,10 @@ section.hero {
     overflow: hidden;
     padding: 0 3rem 3rem 3rem;
     min-height: 90vh;
+    background-image: url('assets/images/bg-star-1.svg'), url('assets/images/bg-star-1.svg'), url('assets/images/bg-star-2.svg');
     background-repeat: no-repeat;
-    background-size: 17.5rem 17.5rem, 15rem, 15rem;
-    background-position: 0 -3.5rem, 100% 100%;
+    background-size: 14rem 14rem, 14rem 14rem, 11rem, 11rem;
+    background-position: -1rem -1.5rem, 100% -6rem, 100% 100%;
 }
 section.about,
 section.offer {
@@ -150,16 +151,24 @@ section.hero .bottom * {
 }
 section.hero .bottom {
     display: flex;
-    gap: 2rem;
     margin-top: -4rem;
     align-items: flex-end;
 }
 section.hero .bottom > div {
-    flex: 1;
+    width: 33.3%;
 }
 section.hero .bottom  .left {
     display: flex;
     flex-direction: column;
+    position: relative;
+}
+section.hero .bottom  .left > .abs {
+    position: absolute;
+    width: 7rem;
+    height: 7rem;
+    left: .5rem;
+    top: 50%;
+    transform: translate(-50%, -50%) scaleX(-1);
 }
 section.hero .bottom .left .dot {
     width: .4rem;
@@ -179,7 +188,7 @@ section.hero .bottom  .left > div {
 section.hero .bottom  .left > div:not(:first-child) {
     margin-top: -.1rem;
 }
-section.hero .bottom  .left > div:nth-child(2) {
+section.hero .bottom  .left > div:nth-child(3) {
     align-self: center;
 }
 section.hero .bottom  .left .text {
@@ -236,8 +245,13 @@ section.hero .right .bonus > div {
     line-height: 104%;
 }
 section.about {
-    padding: 2rem 3rem 3rem 3rem;
+    padding: 2rem 3rem 5rem 3rem;
+    background-image: url('assets/images/bg-star-4.svg'), url('assets/images/bg-star-5.png');
+    background-repeat: no-repeat;
+    background-size: 11rem 11rem, 7rem 5rem;
+    background-position: 100% 0, 0 100%;
 }
+
 section.about .offer {
     border-radius: 24px;
     border: 2px solid #F25B92;
@@ -246,6 +260,7 @@ section.about .offer {
     align-items: center;
     justify-content: center;
     position: relative;
+    background: #FFFFFF;
 }
 section.about .offer > .abs {
     position: absolute;
@@ -433,11 +448,11 @@ section.about .grid > div > .img > img{
     height: 100%;
 }
 section.offer {
-    padding: 5rem 3rem 5rem 3rem;
-    background-image: url("assets/images/form-bg.gif");
+    padding: 6rem 3rem 6rem 3rem;
+    background-image: url("assets/images/form-bg.gif"), url("assets/images/bg-star-6.png");
     background-repeat: no-repeat;
-    background-size: contain;
-    background-position: 125% 100%;
+    background-size: contain, 7rem 5rem;
+    background-position: 125% 100%, 0 0;
     display: flex;
     position: relative;
     align-items: center;
@@ -488,7 +503,7 @@ section.offer .form > .content .action .title > div {
     text-transform: uppercase;
 }
 .button {
-    margin:0  5rem;
+    margin:0 auto;
 }
 section.offer .form .description {
     display: flex;
@@ -518,6 +533,26 @@ section.offer .form .description .text {
     font-size: 1.2rem;
 }
 section.offer .form img.mobile {
+    display: none;
+}
+.pulse {
+    animation: pulse 3s infinite;
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(248, 105, 158, 0.5);
+    }
+    70% {
+        transform: scale(1.03);
+        box-shadow: 0 0 0 1rem rgba(248, 105, 158, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(248, 105, 158, 0);
+    }
+}
+section.offer .form > .content .action .abs-mobile {
     display: none;
 }
 @media screen and (min-width: 2560px) and (max-width: 3840px) {
@@ -590,7 +625,7 @@ section.offer .form img.mobile {
     }
     section.hero,
     section.about {
-        padding: 0 3rem 3rem 3rem;
+        padding: 0 3rem 5rem 3rem;
     }
 }
 @media only screen and (min-width: 1366px) and (max-width: 1420px) {
@@ -749,6 +784,7 @@ section.offer .form img.mobile {
     }
     section.hero .bottom > .center {
         order: 1;
+        width: 100%;
     }
     section.hero .bottom > .left {
         order: 2;
@@ -757,7 +793,6 @@ section.offer .form img.mobile {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: max-content 1fr;
-        gap: 0;
         grid-template-areas:
     "a b"
     "c c";
@@ -765,19 +800,21 @@ section.offer .form img.mobile {
     section.hero .bottom > .left > div {
         width: 100%;
         gap: 1.5rem;
-        padding: 1rem 1rem 1rem 1rem !important;
+        padding: 1rem 1rem 1rem 1rem;
     }
     section.hero .bottom > .left > div .text {
         font-size: 1.35rem !important;
     }
     .a { grid-area: a; }
     .b { grid-area: b; }
-    .c { grid-area: c; }
+    .c { grid-area: c; padding-bottom: 1.5rem;}
     section.hero .bottom > .left > div br {
         display: none;
     }
     section.hero .bottom > .right {
         order: 3;
+        width: 100%;
+        align-items: center;
     }
     section.hero .bottom .left .dot {
         width: 1.1rem;
@@ -788,6 +825,12 @@ section.offer .form img.mobile {
     }
     section.hero .bottom .left > div {
         padding: 1rem 2.4rem 1rem 1.25rem;
+    }
+    section.hero .bottom .left > div.c {
+        padding-bottom: 1.5rem;
+    }
+    section.hero .bottom .left .abs {
+        display: none;
     }
     section.hero .bottom > .right .text {
         font-size: 2.25rem !important;
@@ -806,8 +849,8 @@ section.offer .form img.mobile {
     section.about .offer {
         flex-direction: column;
         width: fit-content;
-        margin: auto;
-        padding: 1rem 2rem 1rem 2rem;
+        margin: 2rem auto 0 auto;
+        padding: 11rem 2rem 1rem 2rem;
     }
     section.about .offer > .text {
         font-size: 2.5rem;
@@ -815,9 +858,17 @@ section.offer .form img.mobile {
         padding-right: 0;
     }
     section.about .offer > .abs {
-        position: initial;
+        left: 50%;
+        transform: translateX(-50%) rotate(-10deg);
         margin: 1rem 0;
-        height: 8rem;
+        height: 11rem;
+        top: -3rem;
+    }
+    section.about .grid > div > .text > div {
+        padding-bottom: 1rem;
+    }
+    section.offer .form > .content .action {
+        padding: 3rem 5rem;
     }
     section.about .offer > .title .text span {
         font-size: 6rem;
@@ -864,7 +915,10 @@ section.offer .form img.mobile {
         flex-direction: column-reverse;
     }
     section.offer {
-        background-image: none;
+        background-image: url("assets/images/bg-star-6.png");
+        background-repeat: no-repeat;
+        background-size: 7rem 5rem;
+        background-position: 0 0;
         padding: 4rem 3rem 0 3rem;
     }
     section.offer .form > .content .action {
@@ -897,7 +951,10 @@ section.offer .form img.mobile {
         font-size: 1.2rem;
     }
     section.offer {
-        background-image: none;
+        background-image: url("assets/images/bg-star-6.png");
+        background-repeat: no-repeat;
+        background-size: 7rem 5rem;
+        background-position: 0 0;
         padding: 4rem 1rem 0 1rem;
     }
 }
@@ -973,6 +1030,44 @@ section.offer .form img.mobile {
     section.offer .form > .content .action {
         padding: 1.25rem;
     }
+    section.about .grid > div > .img {
+        height: 20rem;
+    }
+    section.hero, section.about {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    section.about {
+        padding-bottom: 1rem;
+    }
+    section.offer {
+        padding-top: 4rem;
+        padding-left: 0;
+        padding-right: 0;
+        background-image: none;
+    }
+    section.about {
+        background-image: url('assets/images/bg-star-4.svg');
+        background-repeat: no-repeat;
+        background-size: 11rem 11rem;
+        background-position: 100% 0;
+    }
+
+    main {
+        overflow: hidden;
+    }
+    section.offer .form > .content .action {
+        position: relative;
+    }
+    section.offer .form > .content .action .abs-mobile {
+        position: absolute;
+        left: calc(100% - 3rem);
+        top: 0;
+        transform: translate(-50%, -50%);
+        width: 11rem;
+        height: 11rem;
+        display: block;
+    }
 }
 @media only screen and (max-width: 420px) {
 
@@ -980,7 +1075,7 @@ section.offer .form img.mobile {
         padding: 0 .5rem 1rem .5rem;
     }
     section.offer .form > .content .action .title > div {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 }
 @media only screen and (max-width: 400px) {
