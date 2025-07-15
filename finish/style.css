@@ -190,6 +190,14 @@ main .title > div .abs {
     background: #FFE9F1;
     position: relative;
 }
+.content > .text .bottom .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: fit-content;
+    margin: auto;
+    gap: 1rem;
+}
 .content > .text .bottom .abs {
     position: absolute;
     top: 0;
@@ -198,7 +206,7 @@ main .title > div .abs {
     left: -5.5rem;
     transform: rotate(-23deg);
 }
-.content > .text .bottom > div {
+.content > .text .bottom .wrapper > div {
     display: flex;
     align-items: center;
     gap: .5rem;
