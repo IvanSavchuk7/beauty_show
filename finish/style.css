@@ -1,0 +1,295 @@
+@font-face {
+    font-family: 'Fixel Regular';
+    src: local('Fixel Display Regular'), local('Fixel-Display-Regular'),
+    url('../assets/fonts/FixelDisplay-Regular.woff2') format('woff2'),
+    url('../assets/fonts/FixelDisplay-Regular.woff') format('woff'),
+    url('../assets/fonts/FixelDisplay-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Fixel Semibold';
+    src: local('Fixel Display SemiBold'), local('Fixel-Display-SemiBold'),
+    url('../assets/fonts/FixelDisplay-SemiBold.woff2') format('woff2'),
+    url('../assets/fonts/FixelDisplay-SemiBold.woff') format('woff'),
+    url('../assets/fonts/FixelDisplay-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Basenji ExtraLight';
+    src: url('../assets/fonts/basenji-extralight.otf') format('opentype');
+    font-weight: 100;
+    font-style: normal;
+}
+html {
+    font-size: 20px;
+    min-height: 100vh;
+    background: #FFFFFF;
+    overflow: hidden;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #1D1D1D;
+    letter-spacing: 0;
+    line-height: 104%;
+    text-decoration: none;
+    border: none;
+}
+
+main {
+    min-height: 100vh;
+    background-image: url('../assets/images/finish-bg.svg'), url('../assets/images/finish-bg-1.svg'), url('../assets/images/finish-bg-2.png');
+    background-repeat: no-repeat;
+    background-size: 20vw 50vh, 8vw 60vh, 20vw 45vh;
+    background-position: 0 100%, 100% 35%, 100% 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    --load-time: 2.5s;
+    outline: 1px solid rgb(220, 162, 162);
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+    padding: 8px 0;
+    width: 95%;
+    border-radius: 100px;
+}
+
+.loader.loaded::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+    background: linear-gradient(90deg, #F25B92 0%, #BF2C59 100%);
+    z-index: 2;
+    animation: loading var(--load-time) ease-in-out forwards;
+}
+
+@keyframes loading {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 80%;
+    }
+}
+main .content {
+    width: 45vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 780px;
+}
+main .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 0 0 .5rem ;
+    gap: 10px;
+}
+main .title > div {
+    font-family: 'Basenji ExtraLight', sans-serif;
+    font-size: 2.5rem;
+    position: relative;
+    text-transform: uppercase;
+}
+main .title > div:first-child {
+    width: fit-content;
+}
+main .title > div:last-child {
+    padding-left: 3.75rem;
+}
+main .title > div .abs {
+    position: absolute;
+    width: 7rem;
+    height: 7rem;
+    right: -7rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.button{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex: 2;
+    background-image: url("../assets/images/button-bg.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding: .5rem 2.5rem .5rem 2.5rem;
+    border: 10px solid #f8acc7;
+    border-radius: 100px;
+    margin: auto;
+    height: fit-content;
+    font-family: 'Fixel Semibold', sans-serif;
+}
+.button > span {
+    color: #FFFFFF;
+}
+.button > img {
+    width: 2rem;
+    height: 2rem;
+}
+.pulse {
+    animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(248, 105, 158, 0.5);
+    }
+    70% {
+        transform: scale(1.03);
+        box-shadow: 0 0 0 1rem rgba(248, 105, 158, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(248, 105, 158, 0);
+    }
+}
+
+.content > .text {
+    display: flex;
+    flex-direction: column;
+}
+.content > .text .top {
+    font-family: 'Fixel Regular', sans-serif;
+    color: #FFFFFF;
+    background: #1D1D1D;
+    font-size: 1.6rem;
+    text-align: center;
+    padding: 1rem .5rem;
+    line-height: 130%;
+}
+.content > .text .top > span {
+    color: #F25B92;
+}
+
+.content > .text .bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    background: #FFE9F1;
+    position: relative;
+}
+.content > .text .bottom .abs {
+    position: absolute;
+    top: 0;
+    width: 9rem;
+    height: 3.5rem;
+    left: -5.5rem;
+    transform: rotate(-23deg);
+}
+.content > .text .bottom > div {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+.content > .text .bottom > div img {
+    width: 2rem;
+    height: 2rem;
+}
+.content > .text .bottom > div span {
+    line-height: 130%;
+    font-family: 'Fixel Regular', sans-serif;
+    font-size: 1.1rem;
+}
+@media only screen and (max-width: 1599px) {
+    main {
+        background-size: 10rem 20rem, 10rem 20rem, 10rem 15rem;
+        background-position: 0 100%, 100% 35%, 100% 100%;
+    }
+    main .content {
+        width: 60vw;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    main .content {
+        width: 75vw;
+    }
+}
+@media only screen and (max-width: 870px) {
+    html {
+        font-size: 18px;
+    }
+}
+@media only screen and (max-width: 767px) {
+    html {
+        font-size: 16px;
+    }
+    main .content {
+        width: 90vw;
+    }
+}
+@media only screen and (max-width: 560px) {
+    html {
+        font-size: 12px;
+    }
+    .button {
+        width: 70%;
+    }
+    main .title > div {
+        font-size: 3rem;
+    }
+    .content > .text .bottom .abs {
+        position: absolute;
+        top: calc(100% - 3.5rem);
+        width: 9rem;
+        height: 3.5rem;
+        left: calc(100% - 7rem);
+        transform: rotate(-23deg);
+    }
+    .content > .text .top {
+        padding: 3rem 1rem;
+    }
+    .content > .text .bottom {
+        padding: 3rem 2rem;
+    }
+}
+@media only screen and (max-width: 490px) {
+    html {
+        font-size: 10px;
+    }
+    main {
+        background-position: 0 100%, 100% 0, 100% 100%;
+    }
+}
+@media only screen and (max-width: 420px) {
+    main .title > div {
+        font-size: 2.5rem;
+    }
+    .content > .text .bottom > div span {
+        font-size: 1.3rem;
+    }
+    .loader {
+        padding: 6px 0;
+    }
+}
+@media only screen and (max-width: 365px) {
+    .content > .text .bottom {
+        padding: 2.5rem 1rem;
+    }
+}
+@media only screen and (max-width: 350px) {
+    html {
+        font-size: 8px;
+    }
+}

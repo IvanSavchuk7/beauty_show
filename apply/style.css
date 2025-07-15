@@ -144,7 +144,6 @@ section.offer > .content > .left {
 section.offer .left .tooltip {
     font-size: 1.5rem;
     padding: .5rem 1rem;
-    letter-spacing: 120%;
     background: #F25B92;
     border-radius: 4rem;
     width: fit-content;
@@ -558,6 +557,20 @@ section.offer .left .info > div .text {
     section.offer .content {
         padding: 3rem 3.75rem 2rem 3.75rem;
     }
+    section.hero .title {
+        margin-top: 6rem;
+        font-size: calc(100vw / 4);
+    }
+    section.hero .title .abs {
+        width: 90%;
+        top: 71%;
+    }
+    section.hero .bottom {
+        padding-top: 8rem;
+    }
+    section.hero .bottom > .coupon {
+        padding: 1rem;
+    }
 }
 @media only screen and (max-width: 500px) {
     html {
@@ -565,6 +578,10 @@ section.offer .left .info > div .text {
     }
     section.offer .content {
         padding: 3rem 2rem 2rem 2rem;
+    }
+    section.hero .bottom > .coupon:last-child > div,
+    section.hero .bottom > .coupon:first-child > div:last-child {
+        font-size: 1.25rem;
     }
 }
 @media only screen and (max-width: 440px) {
